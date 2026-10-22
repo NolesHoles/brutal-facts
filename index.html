@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Brutal Facts | Hover a country. See the lostness.</title>
+  <meta name="description" content="An interactive globe of the brutal facts of lostness, country by country. Data provided by Joshua Project.">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="globe" aria-label="Interactive globe of countries"></div>
+
+  <header class="top">
+    <div class="brand">
+      <img class="logo" src="img/made-new-logo.webp" alt="Made New" width="64" height="64">
+      <h1>Brutal Facts</h1>
+    </div>
+    <p class="sub">Hover a country. See the lostness.</p>
+    <div class="toggle" role="group" aria-label="Color countries by">
+      <button type="button" data-mode="evan" class="on">% Evangelical</button>
+      <button type="button" data-mode="unreached">Unreached share</button>
+      <button type="button" data-mode="least">Least reached</button>
+    </div>
+    <div class="search" role="search">
+      <svg class="search-ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="search" type="search" placeholder="Search a country" autocomplete="off" autocapitalize="off" spellcheck="false"
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-list" aria-label="Search a country">
+      <button type="button" id="search-clear" class="search-clear" aria-label="Clear search" hidden>&times;</button>
+      <ul id="search-list" class="search-list" role="listbox" hidden></ul>
+    </div>
+  </header>
+
+  <div class="actions">
+    <a class="insta" href="https://www.instagram.com/madenew5_17/" target="_blank" rel="noopener" aria-label="Made New on Instagram"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></a>
+    <button type="button" id="help-btn" class="help-btn" aria-haspopup="dialog" aria-controls="help-modal">Want to help?</button>
+  </div>
+
+  <div id="help-modal" class="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <button type="button" class="modal-close" aria-label="Close">&times;</button>
+      <h2 id="help-title">Want to help?</h2>
+      <p>The harvest is plentiful. Want to be part of reaching places with no gospel access? Get trained, or reach out.</p>
+      <a class="cta" href="https://noplaceleft.net/" target="_blank" rel="noopener">Visit No Place Left</a>
+      <p class="contact">Contact me: <a href="mailto:nora11022@praxwell.com">nora11022@praxwell.com</a></p>
+      <p class="contact follow"><a href="https://www.instagram.com/madenew5_17/" target="_blank" rel="noopener" aria-label="Made New on Instagram">Follow @madenew5_17</a></p>
+    </div>
+  </div>
+
+  <aside id="card" class="card" hidden aria-live="polite">
+    <button type="button" class="close" aria-label="Close" hidden>&times;</button>
+    <div class="card-kicker">Brutal Facts</div>
+    <h2 class="card-title"></h2>
+    <div class="big">
+      <div class="big-label">Estimated far from God <span class="rough">(rough estimate)</span></div>
+      <div class="big-value"></div>
+    </div>
+    <dl class="facts"></dl>
+    <p class="level"></p>
+    <button type="button" class="pray-btn" aria-expanded="false" aria-controls="prayer">Pray for <span class="pray-name"></span></button>
+    <div id="prayer" class="prayer" hidden>
+      <p class="prayer-text"></p>
+      <div class="prayer-actions">
+        <button type="button" class="copy-btn">Copy prayer</button>
+        <span class="copy-status" aria-live="polite"></span>
+      </div>
+      <p class="prayer-note">Built only from Joshua Project's numbers for this country.</p>
+    </div>
+    <p class="card-hint">Tap or click a country to pin it and pray.</p>
+  </aside>
+
+  <div class="legend" id="legend"></div>
+
+  <footer class="foot">
+    <span>Data provided by <a href="https://joshuaproject.net" target="_blank" rel="noopener">Joshua Project</a></span>
+    <span class="dot">·</span>
+    <span id="src-note">Country data downloaded Oct 19, 2026.</span>
+    <span class="dot">·</span>
+    <span>% figures are estimates. "Far from God" = population × (1 − % Evangelical), a rough estimate.</span>
+  </footer>
+
+  <script src="lib/globe.gl.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
