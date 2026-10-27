@@ -8,7 +8,7 @@ The data loads with `fetch`, so open it through a small local server instead of 
     cd npl_globe && python3 -m http.server 8000
     # then open http://localhost:8000
 
-It works fully offline. The globe library, fonts, map shapes, and data are all bundled in this folder.
+The globe library, map shapes, and data are bundled and work offline. UI type loads from Google Fonts (Big Shoulders Display, Instrument Serif, Inter Tight, IBM Plex Mono) and falls back to the bundled Fredoka and Open Sauce Sans when those are unavailable.
 
 ## Live Joshua Project data (Netlify)
 The page first asks `/api/countries` for live data. That's a Netlify Function
@@ -38,7 +38,7 @@ Add `?static=1` anywhere to force the saved file.
 ## Files
 - `index.html`, `css/style.css`, `js/app.js`: the site
 - `lib/globe.gl.min.js`: globe.gl v2.46.2 (MIT, see `lib/globe.gl-LICENSE.txt`). three.js is bundled inside it.
-- `fonts/`: Fredoka (titles) and Open Sauce Sans (body). Both are under the SIL Open Font License.
+- `fonts/`: Fredoka and Open Sauce Sans, kept as offline fallbacks. Both are under the SIL Open Font License. The on-screen UI uses the Google Fonts listed above.
 - `data/countries.json`: Joshua Project "All Countries" CSV, converted to JSON (downloaded 2026-10-19)
 - `data/countries.geojson`: Natural Earth 1:50m country borders (public domain), simplified, with Antarctica removed
 - `jp-AllCountriesListing.csv` + `prep_data.py`: the raw source file and the script that rebuilds `data/`. Re-download the CSV from https://joshuaproject.net/resources/datasets, update `DOWNLOADED`, and run `python3 prep_data.py`.

@@ -1,4 +1,5 @@
 - globe.gl / three.js: MIT
-- Fredoka, Open Sauce Sans: SIL Open Font License 1.1
+- Big Shoulders Display, Instrument Serif, Inter Tight, IBM Plex Mono (Google Fonts): SIL Open Font License 1.1
+- Fredoka, Open Sauce Sans (offline fallbacks): SIL Open Font License 1.1
 - Natural Earth: public domain
 - Joshua Project data: free for non-commercial use, with attribution "Data provided by Joshua Project" (https://joshuaproject.net/help/terms)
